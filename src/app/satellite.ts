@@ -1,3 +1,5 @@
+import { timeStamp } from "console";
+
 export class Satellite {
 
 	name: string;
@@ -15,7 +17,7 @@ export class Satellite {
    }
 	
 	isSpaceDebris(): boolean {
-		return true;
+		return this.type === "Space Debris";
    }
 
 }
