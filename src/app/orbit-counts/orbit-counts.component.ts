@@ -29,6 +29,7 @@ export class OrbitCountsComponent implements OnInit {
 	return count;
  }
 
+ 	// returns an array of the types of satellites
 	groupByTypes(satellitesArray: Satellite[]) {
 		let types : string [] = [];
 		for (let i: number = 0; i < satellitesArray.length; i++) {
