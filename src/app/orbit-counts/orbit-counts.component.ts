@@ -10,6 +10,8 @@ export class OrbitCountsComponent implements OnInit {
 
 	@Input() satellites: Satellite[];
 
+	//types: string [] = ["Communication", "Probe", "Space Station", "Telescope", "Space Debris", "Positioning"];
+
   constructor() { }
 
   ngOnInit() {
@@ -27,5 +29,14 @@ export class OrbitCountsComponent implements OnInit {
 	return count;
  }
 
+	groupByTypes(satellitesArray: Satellite[]) {
+		let types : string [] = [];
+		for (let i: number = 0; i < satellitesArray.length; i++) {
+			if (!types.includes(satellitesArray[i].type)) {
+				types.push(satellitesArray[i].type)
+			}
+		}
+		return types;
+	}
 
 }
