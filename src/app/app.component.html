@@ -10,11 +10,9 @@
 <div class="search-form">
 	Search by Name: <input #searchTerm1 type="text" (keyup.enter)="search(searchTerm1.value, 'name');" name="searchTerm1"/>
 	<button (click)="search(searchTerm1.value, 'name');">Search</button>
-
 	<br>
 	Search by Type: <input #searchTerm2 type="text" (keyup.enter)="search(searchTerm2.value, 'type');" name="searchTerm2"/>
 	<button (click)="search(searchTerm2.value, 'type');">Search</button>
-	
 	<br>
 	Search by Orbit Type: <input #searchTerm3 type="text" (keyup.enter)="search(searchTerm3.value, 'orbitType');" name="searchTerm3"/>
 	<button (click)="search(searchTerm3.value, 'orbitType');">Search</button>
