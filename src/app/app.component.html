@@ -1,10 +1,21 @@
 <h1>Orbit Report</h1>
 
+<!-- TODO 1: add list component to app HTML -->
+<!--
+	[satellites] declares a new satellites property on the orbit-list component.
+	="displayList" sets the value of the satellites property to be the displayList array.
+-->
+<app-orbit-list [satellites]="displayList"></app-orbit-list>
+
 <div class="search-form">
-	Search: <input #searchTerm type="text" (keyup.enter)="search(searchTerm.value);" name="searchTerm"/>
-	<button (click)="search(searchTerm.value);">Search</button>
+	Search by Name: <input #searchTerm1 type="text" (keyup.enter)="search(searchTerm1.value, 'name');" name="searchTerm1"/>
+	<button (click)="search(searchTerm1.value, 'name');">Search</button>
+	<br>
+	Search by Type: <input #searchTerm2 type="text" (keyup.enter)="search(searchTerm2.value, 'type');" name="searchTerm2"/>
+	<button (click)="search(searchTerm2.value, 'type');">Search</button>
+	<br>
+	Search by Orbit Type: <input #searchTerm3 type="text" (keyup.enter)="search(searchTerm3.value, 'orbitType');" name="searchTerm3"/>
+	<button (click)="search(searchTerm3.value, 'orbitType');">Search</button>
 </div>
 
 <app-orbit-counts [satellites]="displayList"></app-orbit-counts>
-
-<!-- TODO 1: add list component to app HTML -->

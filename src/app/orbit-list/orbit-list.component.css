@@ -26,3 +26,14 @@ th, td {
 	margin: 5px 10px;
 	padding: 6px;
 }
+
+/* Alternate the color for every other row in the table. 
+  The highlighting for space debris should still be distinct */
+
+.data-row:nth-child(even) { 
+	background-color: lightgrey; 
+} 
+
+.data-row:nth-child(odd) { 
+	background-color: skyblue 
+} 

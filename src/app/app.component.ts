@@ -37,12 +37,15 @@ export class AppComponent {
 
 	}
 
-	search(searchTerm: string): void {
+	/* searches a column of string data for the desired search term and creates a filtered list 
+	   of the satellites to show any rows in which the column contains the matching search term */
+	search(searchTerm: string, colName: string): void {
 		let matchingSatellites: Satellite[] = [];
 		searchTerm = searchTerm.toLowerCase();
 		for(let i=0; i < this.sourceList.length; i++) {
-			let name = this.sourceList[i].name.toLowerCase();
-			if (name.indexOf(searchTerm) >= 0) {
+			// colName is the name of the key for the column to be searched
+			let searchItem = this.sourceList[i][`${colName}`].toLowerCase();
+			if (searchItem.indexOf(searchTerm) >= 0) {
 				matchingSatellites.push(this.sourceList[i]);
 			}
 		}
@@ -50,6 +53,5 @@ export class AppComponent {
 		// this will cause Angular to re-make the table, but now only containing matches
 		this.displayList = matchingSatellites;
 	}
-
 
 }
